@@ -39,8 +39,8 @@ environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
-AUTH_USER_MODEL = 'api_core.User' \
-                  ''
+AUTH_USER_MODEL = 'api_core.User'
+
 if DEBUG:
     ALLOWED_HOSTS.append('localhost')
 
@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'knox',
     'api_core',
     'api_auth',
+    'api_doctor',
+    'api_patient',
 ]
 
 MIDDLEWARE = [
