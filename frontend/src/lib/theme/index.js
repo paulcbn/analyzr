@@ -3,27 +3,19 @@ import { createMuiTheme } from '@material-ui/core';
 export default createMuiTheme({
   palette: {
     primary: {
-      light: '#bef67a',
-      main: '#8bc34a',
-      dark: '#5a9216',
-      contrastText: '#000',
+      light: '#4f5b62',
+      main: '#263238',
+      dark: '#000a12',
+      contrastText: '#ffffff',
     },
     secondary: {
-      light: '#ffc947',
-      main: '#ff9800',
-      dark: '#c66900',
-      contrastText: '#000',
+      light: '#ff6659',
+      main: '#d32f2f',
+      dark: '#9a0007',
+      contrastText: '#ffffff',
     },
-    enrollmentState: {
-      deleteButton: {
-        color: '#e91616',
-        hoverColor: 'rgba(217,109,109,0.41)',
-      },
-      icons: {
-        error: '#e91616',
-        valid: '#1A1',
-        warn: '#FA1',
-      },
+    layout: {
+      logoutIcon: '#ff6659',
     },
   },
   typography: {},
