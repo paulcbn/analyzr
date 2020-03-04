@@ -10,7 +10,7 @@ import { deepGet } from '../../../lib/utils';
 import useStyles from './styles';
 
 
-const Login = ({ errors, loading, isAuthenticated, userType, login }) => {
+const Login = ({ errors, loading, isAuthenticated, login }) => {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
 
@@ -33,7 +33,7 @@ const Login = ({ errors, loading, isAuthenticated, userType, login }) => {
     <form onSubmit={ handleSubmit }>
       <Paper className={ classes.loginPaper }>
         <Typography variant="h2">
-          Analize chestii
+          Analyzr
         </Typography>
         <TextField variant="outlined" label="Username"
                    error={ !!errors.username }
@@ -51,7 +51,7 @@ const Login = ({ errors, loading, isAuthenticated, userType, login }) => {
                    className={ classes.loginInput }
         />
         <Box className={ classes.buttonBox }>
-          <Button variant="contained" size="large" color="primary" type="submit">Login</Button>
+          <Button variant="contained" size="large" color="secondary" type="submit">Login</Button>
         </Box>
         <OverlayCircularProgress show={ loading }/>
       </Paper>

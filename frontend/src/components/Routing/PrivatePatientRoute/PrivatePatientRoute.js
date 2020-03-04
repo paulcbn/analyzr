@@ -1,14 +1,14 @@
 import React, { useMemo } from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import { userTypes } from '../../../lib/constants';
 import { deepGet } from '../../../lib/utils';
 
 const PrivatePatientRoute = ({ pageComponent: Page, loadingComponent: Loading, notAllowedComponent: NotAllowed, errorRedirectRoute, authState, ...otherProps }) => {
   const { isPatient, loading, isAuthenticated } = useMemo(() => ({
     loading: deepGet(authState, 'loginLoading', false),
     isAuthenticated: deepGet(authState, 'isAuthenticated', false),
-    isPatient: deepGet(authState, 'currentUser.userType', 'doctor') === 'patient',
+    isPatient: deepGet(authState, 'currentUser.userType', userTypes.DOCTOR) === userTypes.PATIENT,
   }), [ authState ]);
-  console.log({ isPatient});
   return <Route
     { ...otherProps }
 
