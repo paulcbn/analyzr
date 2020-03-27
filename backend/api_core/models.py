@@ -23,9 +23,16 @@ class PatientProfile(models.Model):
         return f'{self.user.username} '
 
 
+class DoctorInterest(models.Model):
+    interest_type = models.CharField(max_length=100)
+
+
 class DoctorProfile(models.Model):
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, related_name='doctor_profile')
     verified = models.BooleanField(default=False)
+    domain = models.ManyToManyField(DoctorInterest, related_name="domain", null=True)
+    ongoing_patients_list = models.ManyToManyField(PatientProfile, related_name="ongoing_patients_list", null=True)
+    solved_patients_list = models.ManyToManyField(PatientProfile, related_name="solved_patients_list", null=True)
 
     def __str__(self):
         return f'{self.user.username} (Verified: {self.verified}) '

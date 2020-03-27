@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm
 
-from api_core.models import PatientProfile, DoctorProfile
+from api_core.models import PatientProfile, DoctorProfile, DoctorInterest
 
 
 class MyUserChangeForm(UserChangeForm):
@@ -41,3 +41,4 @@ class MyUserAdmin(UserAdmin):
 
 
 admin.site.register(get_user_model(), MyUserAdmin)
+admin.site.register(DoctorInterest)
