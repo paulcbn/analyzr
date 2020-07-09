@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import "assets/scss/argon-dashboard-react.scss";
+import "assets/plugins/nucleo/css/nucleo.css";
+// import "@fortawesome/fontawesome-free/css/all.min.css";
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
