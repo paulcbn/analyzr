@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { auth } from '../../../lib/redux/actions';
 import { Loading } from '../../../pages/common/Loading';
 import { Login } from '../../../pages/common/Login';
+import { Home } from '../../../pages/common/Home';
 import { NotAllowed } from '../../../pages/common/NotAllowed';
 import { NotFound } from '../../../pages/common/NotFound';
 import { DoctorDashboard } from '../../../pages/doctor';
@@ -23,8 +24,9 @@ const RootContainer = ({ loadUser, auth }) => {
         <CorrespondingRouteRedirecter exact path="/"
                                       patientRoute="/patient"
                                       doctorRoute="/doctor"
+                                      pageComponent={ Home }
                                       loadingComponent={ Loading }
-                                      errorRedirectRoute="/login"
+                                      errorRedirectRoute="/home"
                                       authState={ auth }/>
 
         <PrivatePatientRoute exact path="/patient"
@@ -44,6 +46,9 @@ const RootContainer = ({ loadUser, auth }) => {
 
         <Route exact path="/login">
           <Login/>
+        </Route>
+        <Route exact path="/home">
+          <Home/>
         </Route>
         <Route>
           <NotFound/>
